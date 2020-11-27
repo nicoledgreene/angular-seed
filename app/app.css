@@ -25,8 +25,14 @@
 }
 
 
-.about {
+.about, .error {
   display: flex;
   flex-direction: column;
   padding: 24px;
+}
+
+.error {
+  background-color: red;
+  color: white;
+  width: 100%;
 }
