@@ -6,14 +6,39 @@ var myApp = angular.module("myApp", []);
 // }]);
 
 
+// myApp.controller("myController", ["$scope", function($scope) {
+//   $scope.error = {
+//       message: "A server error occurred",
+//       code: "500"
+//   };   
+// }])
+// .directive("errorWindow", function() {
+//   return {
+//       templateUrl: "error-window.html"
+//   }
+// });
+
+
 myApp.controller("myController", ["$scope", function($scope) {
-  $scope.error = {
-      message: "A server error occurred",
-      code: "500"
-  };   
+  $scope.menuItems = [],
+  $scope.addToMenu = function(i, p) {
+    console.log('add to menu: ',i, p);
+    menuItems.push({item: i, price: p});
+  };
 }])
-.directive("errorWindow", function() {
+.directive("simpleForm", function() {
   return {
-      templateUrl: "error-window.html"
+    templateUrl: "simple-form.html",
+    scope: {
+      menuItem: "@",
+      price: "@",
+      addItem: "&"
+    },
+    link: function(scope) {
+      console.log(scope);
+    }
   }
 });
+
+
+

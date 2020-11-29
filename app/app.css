@@ -25,7 +25,7 @@
 }
 
 
-.about, .error {
+.about, .error, .form {
   display: flex;
   flex-direction: column;
   padding: 24px;
